@@ -14,4 +14,12 @@ class Search < ApplicationRecord
         result
     end
 
+    def airports
+        JSON.parse(skyscanner.find_airports(package_data).body)
+    end
+
+    def skyscanner
+        SkyScanner.new
+    end
+
 end

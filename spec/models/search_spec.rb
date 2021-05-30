@@ -62,4 +62,26 @@ RSpec.describe Search, type: :model do
         end
 
     end
+
+    describe ".airports" do
+
+        context "when called" do
+
+            let(:search) { Search.create({"query" => "Stockholm", "country" => "UK", "currency" => "GBP", "locale" => "en-GB"}) }
+
+            it "returns airports as expected" do
+                expect(search.airports).to include(
+                    "Places"=>
+                    [{"PlaceId"=>"STOC-sky", "PlaceName"=>"Stockholm", "CountryId"=>"SE-sky", "RegionId"=>"", "CityId"=>"STOC-sky", "CountryName"=>"Sweden"},
+                     {"PlaceId"=>"ARN-sky", "PlaceName"=>"Stockholm Arlanda", "CountryId"=>"SE-sky", "RegionId"=>"", "CityId"=>"STOC-sky", "CountryName"=>"Sweden"},
+                     {"PlaceId"=>"NYO-sky", "PlaceName"=>"Stockholm Skavsta", "CountryId"=>"SE-sky", "RegionId"=>"", "CityId"=>"STOC-sky", "CountryName"=>"Sweden"},
+                     {"PlaceId"=>"BMA-sky", "PlaceName"=>"Stockholm Bromma", "CountryId"=>"SE-sky", "RegionId"=>"", "CityId"=>"STOC-sky", "CountryName"=>"Sweden"},
+                     {"PlaceId"=>"VST-sky", "PlaceName"=>"Stockholm Vasteras", "CountryId"=>"SE-sky", "RegionId"=>"", "CityId"=>"STOC-sky", "CountryName"=>"Sweden"}]
+                )
+            end
+
+        end
+
+    end
+
 end
