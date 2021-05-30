@@ -1,0 +1,16 @@
+<div class="columns has-text-centered">
+    <div class="column"></div>
+    <div class="column">
+        <div class="box">
+            <h2 class="title is-2">Find Airports in Your City</h2>
+            <%= form_for @search do |f| %>
+                <%= f.text_field :query, class: "input is-fullwidth mb-4", placeholder: "Enter City" %>
+                <%= f.hidden_field :locale, :value => "en-US" %>
+                <%= f.hidden_field :country, :value => "US" %>
+                <%= f.hidden_field :currency, :value => "USD" %>
+                <%= f.submit class: "button is-fullwidth is-success" %>
+            <% end %>
+        </div>
+    </div>
+    <div class="column"></div>
+</div>

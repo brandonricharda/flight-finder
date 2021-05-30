@@ -1,0 +1,23 @@
+<div class="columns has-text-centered">
+    <div class="column"></div>
+    <div class="column">
+        <h2 class="title is-2">Results</h2>
+        <% @airports.each do |airport| %>
+            <div class="box">
+
+                <div class="columns has-text-centered">
+                    <div class="column">
+                        <h2 class="title is-6">Airport</h2>
+                        <p><%= airport["PlaceName"] %></p>
+                    </div>
+                    <div class="column">
+                        <h2 class="title is-6">Country</h2>
+                        <p><%= airport["CountryName"] %></p>
+                    </div>
+                </div>
+
+            </div>
+        <% end %>
+    </div>
+    <div class="column"></div>
+</div>

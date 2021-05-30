@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <nav class="navbar is-dark mb-5" role="navigation">
+        <div class="navbar-brand">
+            <%= link_to("Home", new_search_url, class: "navbar-item") %>
+        </div>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
