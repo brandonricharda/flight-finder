@@ -14,7 +14,7 @@ class SkyScanner
         request = Net::HTTP::Get.new(url)
         request["x-rapidapi-key"] = ENV["rapid-api-key"]
         request["x-rapidapi-host"] = 'skyscanner-skyscanner-flight-search-v1.p.rapidapi.com'
-        
-        JSON.parse(http.request(request).response.body)
+
+        http.request(request)
     end
 end
